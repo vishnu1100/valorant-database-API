@@ -57,9 +57,9 @@
 
 
 
-    <section id="weapons" class="banner bgwhite p-t-40 p-b-40">
+    <section id="buddies" class="banner bgwhite p-t-40 p-b-40">
         <div class="container">
-            <div class="row" id="weapons-banners">
+            <div class="row" id="buddies-banner">
               
             </div>
         </div>
@@ -136,11 +136,11 @@
 
 
 
-                  const API_WEAPON = 'https://valorant-api.com/v1/weapons';
+                  const API_MAP = 'https://valorant-api.com/v1/buddies';
 
 async function fetchWeapons() {
     try {
-        const response = await fetch(API_WEAPON);
+        const response = await fetch(API_MAP);
         const data = await response.json();
         return data.data;
         
@@ -152,14 +152,14 @@ async function fetchWeapons() {
 
 async function updateBanners() {
     const weapons = await fetchWeapons();
-    const container = document.getElementById('weapons-banners');
+    const container = document.getElementById('buddies-banner');
 
     // Clear the container before adding new content
     container.innerHTML = '';
 
     weapons.forEach(weapon => {
         const banner = document.createElement('div');
-        banner.className = 'col-sm-10 col-md-8 col-lg-6 m-l-r-auto';
+        banner.className = 'col-sm-10 col-md-8 col-lg-3 m-l-r-auto';
 
         banner.innerHTML = `
             <div class="block1 hov-img-zoom pos-relative m-b-30">
