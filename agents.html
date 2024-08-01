@@ -141,7 +141,7 @@
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8ac68ced194647d9","serverTiming":{"name":{"cfL4":true}},"version":"2024.7.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
         crossorigin="anonymous"></script>
 
-        ///
+       
 
 <script>
     
@@ -161,7 +161,6 @@ async function fetchAgents() {
         return [];
     }
 }
-
 async function updateBanners() {
     const agents = await fetchAgents();
     const container = document.getElementById('agent-banners');
@@ -177,7 +176,7 @@ async function updateBanners() {
             <div class="block1 hov-img-zoom pos-relative m-b-30">
                 <img src="${agent.fullPortraitV2}" alt="${agent.displayName}">
                 <div class="block1-wrapbtn w-size2">
-                    <a href="" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                    <a href="agentinfo.html?uuid=${agent.uuid}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
                         ${agent.displayName}
                     </a>
                 </div>
